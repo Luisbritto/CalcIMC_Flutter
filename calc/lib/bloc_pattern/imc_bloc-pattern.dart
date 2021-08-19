@@ -1,4 +1,3 @@
-import 'dart:math';
 
 import 'package:calc/bloc_pattern/imc_bloc-pattern-controller.dart';
 import 'package:calc/bloc_pattern/imc_state.dart';
@@ -20,18 +19,6 @@ class _ImcBlocPatternPageState extends State<ImcBlocPatternPage> {
   final alturaEC = TextEditingController();
   final formKey = GlobalKey<FormState>();
   var imc = 0.0;
-
-  Future<void> _calcularIMC(double peso, double altura) async {
-    setState(() {
-      imc = 0;
-    });
-
-    await Future.delayed(Duration(seconds: 1));
-
-    setState(() {
-      imc = peso / pow(altura, 2);
-    });
-  }
 
   @override
   void dispose() {
